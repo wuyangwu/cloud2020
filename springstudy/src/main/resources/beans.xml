@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用Spring来创建对象，在Spring这些都称为Bean
+        bean = 对象 new Hello();
+        id = 变量名
+        class = new 的对象；
+        property相当于给对象中的属性设置一宿
+-->
+    <bean id="hello" class="com.atguigu.springcloud.pojo.Hello">
+        <property name="str" value="spring" />
+    </bean>
+
+
+    <bean id="mysqlImpl" class="com.atguigu.springcloud.dao.UserDaoMysqlmpl" />
+
+    <bean id="oracleImpl" class="com.atguigu.springcloud.dao.UserDaoOracleImpl" />
+
+<!--    id:bean的唯一标识符，也就是相当于我们学的对象名
+            class：bean对象所在包的位置，
+            -->
+    <bean id="UserServiceImpl" class="com.atguigu.springcloud.services.UserServiceImpl">
+        <property name="userDao" ref="oracleImpl" />
+    </bean>
+
+    <!--下标赋值-->
+    <bean id="user" class="com.atguigu.springcloud.dao.user">
+            <constructor-arg index="0" value="好好学习" />
+    </bean>
+
+    <alias name="user" alias="user2" />
+
+</beans>
