@@ -27,10 +27,10 @@
     </bean>
 
     <!--下标赋值-->
-    <bean id="user" class="com.atguigu.springcloud.dao.user">
-            <constructor-arg index="0" value="好好学习" />
-    </bean>
+<!--    <bean id="user" class="com.atguigu.springcloud.dao.user">-->
+<!--            <constructor-arg index="0" value="好好学习" />-->
+<!--    </bean>-->
 
-    <alias name="user" alias="user2" />
+<!--    <alias name="user" alias="user2" />-->
 
 </beans>
