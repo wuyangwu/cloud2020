@@ -4,5 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+<!--        <bean id="cat" class="com.atguigu.springcloud.autowired.Cat" />-->
+<!--        <bean id="dog" class="com.atguigu.springcloud.autowired.Dog" />-->
+<!--     byName:会自动在容器上下文中查找，和自己duixset方法后的值对应的beanid   -->
+<!--     byType：会自动在容器上下文中查找，和子集对象属性类型相同的beanid   -->
+<!--        <bean id="people" class="com.atguigu.springcloud.autowired.People" autowire="byType">-->
+<!--                <property name="name" value="wuyang"/>-->
+<!--        </bean>-->
 </beans>
