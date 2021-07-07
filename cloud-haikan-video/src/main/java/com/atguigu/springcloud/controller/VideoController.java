@@ -132,6 +132,7 @@ public class VideoController {
             log.error("与拉流IP：   " + cameraInit.pojo.getIp()+"   端口：  554"+ " 建立TCP连接失败");
             return false;
         }
+
         try {
             rtspsocket.close();
         } catch (IOException e) {
@@ -139,6 +140,7 @@ public class VideoController {
         }finally {
             log.info("ip和端口能通过连接测试");
         }
+
         try {
             rtmpsocket.connect(new InetSocketAddress(Utils.IpConvert(config.getPush_host()),
                     Integer.parseInt(config.getPush_port())), 1000);
@@ -147,6 +149,7 @@ public class VideoController {
             log.error("与推流IP：   " +config.getPush_host()+"   端口：   "+config.getPush_port()+" 建立TCP连接失败！");
             return false;
         }
+
         try {
             rtmpsocket.close();
         } catch (IOException e) {
@@ -154,6 +157,7 @@ public class VideoController {
         }finally {
             log.info("ip和端口能通过连接测试");
         }
+
         return true;
     }
 
